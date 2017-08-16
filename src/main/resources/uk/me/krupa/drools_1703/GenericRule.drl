@@ -1,0 +1,12 @@
+package uk.me.krupa.drools_2703;
+
+import uk.me.krupa.drools_1703.Thingy;
+import uk.me.krupa.drools_1703.DummyCondition;
+
+rule "001"
+    dialect "mvel"
+    when
+        $condition:DummyCondition( getText() contains "fire" )
+    then
+        insert( new Thingy(drools.getRule().getName()) );
+    end
